@@ -64,7 +64,7 @@ class Mustache
      */
     public function render(ResponseInterface $response, $templateName, $data = array())
     {
-        $this->getRenderedMarkup($templateName, $data);
+        $output = $this->getRenderedMarkup($templateName, $data);
         $response->getBody()->write($output);
     }
 
