@@ -42,7 +42,8 @@ class Mustache
      * Constructor
      *
      * @param string $templatePath
-     * @param array $attributes
+     * @param array $options Options for \Mustache_Engine
+     * @param array $loaderOptions Options for \Mustache_Loader_FilesystemLoader
      */
     public function __construct($templatePath = "", $options = array(), $loaderOptions = array())
     {
@@ -52,20 +53,34 @@ class Mustache
     }
 
     /**
-     * Render Mustache Template
+     * Render Mustache template
      *
      * This method will write the rendered template content to the response
      *
      * @param ResponseInterface $response Psr Response used by Slim
-     * @param string $template The path to the Mustache template, relative to the templates directory.
+     * @param string $templateName The mustache template name
      * @param array $data
      * @return void
      */
-    public function render(ResponseInterface $response, $template, $data = array())
+    public function render(ResponseInterface $response, $templateName, $data = array())
+    {
+        $this->getRenderedMarkup($templateName, $data);
+        $response->getBody()->write($output);
+    }
+
+    /**
+     * Get rendered Mustache template
+     *
+     * Get the raw html from the rendered markup
+     *
+     * @param string $templateName The mustache template name
+     * @param array $data
+     * @return void
+     */
+    public function getRenderedMarkup($templateName, $data = array())
     {
         $m = $this->getInstance();
-        $output = $m->render($template, $data);
-        $response->getBody()->write($output);
+        return $m->render($templateName, $data);
     }
 
     /**
