@@ -1,5 +1,5 @@
 {
-    "name": "jahmie/slim-mustache-view",
+    "name": "lejahmie/slim-mustache-view",
     "type": "library",
     "description": "Mustache View package for the Slim Framework",
     "keywords": ["templating", "view", "slimphp", "mustache"],
