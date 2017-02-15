@@ -9,7 +9,7 @@ using [bobthecow](https://github.com/bobthecow/mustache.php) great PHP implement
 
 
 ```bash
-$ composer require jahmie/slim-mustache-view
+$ composer require lejahmie/slim-mustache-view
 ```
 
 ## How to use
@@ -59,7 +59,7 @@ Set the Mustache options. See; https://github.com/bobthecow/mustache.php/wiki
 
 ## Authors
 
-[Jamie Telin](https://github.com/jahmie/)
+[Jamie Telin](https://github.com/lejahmie/)
 
 ## License
 
